@@ -18,28 +18,28 @@ composer require sun/country
  
 ## Basic Uses
 
-#### Get All Countries Name and Dialing Code
+#### Get all countries name and dialing code
 
 ```php
 $country = new Sun\Country;
 $country->get();
 ```
 
-#### Get a Country Name and Dialing Code
+#### Get a country name and dialing code
 
 ```php
 $country = new Sun\Country;
 $country->get('BD');
 ```
 
-#### Get Multiple Countries Name and Dialing Code
+#### Get multiple countries name and dialing code
 
 ```php
 $country = new Sun\Country;
 $country->get(['BD', 'US']);
 ```
 
-#### Get a Country Name and Dialing Code using Alpha 2 code as property
+#### Get a country name and dialing code using Alpha 2 code as property
 
 ```php
 $country = new Sun\Country;
@@ -47,14 +47,14 @@ $country->bd;
 ```
 
 
-#### Get a Country Name
+#### Get a country name
 
 ```php
 $country = new Sun\Country;
 $country->getName('BD');
 ```
 
-#### Get a Country Dialing Code
+#### Get a country dialing code
 
 ```php
 $country = new Sun\Country;
