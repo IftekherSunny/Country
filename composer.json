@@ -1,0 +1,24 @@
+{
+  "name": "sun/country",
+  "description": "Sun Country is the package that helps you to get the country name & dialing code by the country ISO 3166-1 Alpha-2 code.",
+  "keywords": ["sun", "planet", "php", "country", "country code", "planet country code", "sun country code", "laravel", "laravel country", "laravel country code"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Iftekher Sunny",
+      "email": "iftekhersunny@hotmail.com",
+      "homepage": "http://iftekhersunny.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "2.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sun\\": "src/"
+    }
+  }
+}
