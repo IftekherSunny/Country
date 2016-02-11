@@ -23,7 +23,7 @@ class Country implements CountryContract
     }
 
     /**
-     * Get the country name & dialing code by the country ISO 3166-1 Alpha-2 code.
+     * Get country name & dialing code by the country ISO 3166-1 Alpha-2 code.
      *
      * @param string|array $countryCode
      *
@@ -41,7 +41,7 @@ class Country implements CountryContract
     }
 
     /**
-     * Get the country name by the country ISO 3166-1 Alpha-2 code.
+     * Get country name by the country ISO 3166-1 Alpha-2 code.
      *
      * @param string $countryCode
      *
@@ -55,7 +55,7 @@ class Country implements CountryContract
     }
 
     /**
-     * Get the dialing code by the country ISO 3166-1 Alpha-2 code.
+     * Get dialing code by the country ISO 3166-1 Alpha-2 code.
      *
      * @param string $countryCode
      *
@@ -69,7 +69,7 @@ class Country implements CountryContract
     }
 
     /**
-     * Dynamically get the country name & dialing code by the country ISO 3166-1 Alpha-2 code.
+     * Dynamically get country name & dialing code by the country ISO 3166-1 Alpha-2 code.
      *
      * @param $countryCode
      *
