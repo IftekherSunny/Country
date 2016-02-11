@@ -1,5 +1,7 @@
 ## Sun Country
 
+[![Build Status](https://travis-ci.org/IftekherSunny/Country.svg?branch=master)](https://travis-ci.org/IftekherSunny/Country) [![Total Downloads](https://poser.pugx.org/sun/country/downloads)](https://packagist.org/packages/sun/country) [![Latest Stable Version](https://poser.pugx.org/sun/country/v/stable)](https://packagist.org/packages/sun/country) [![Latest Unstable Version](https://poser.pugx.org/sun/country/v/unstable)](https://packagist.org/packages/sun/country) [![License](https://poser.pugx.org/sun/country/license)](https://packagist.org/packages/sun/country)
+
 Sun Country is the package that helps you to get country name and dialing code by the country ISO 3166-1 Alpha-2 code.
 
 ## Installation Process
