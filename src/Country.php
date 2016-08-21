@@ -3,6 +3,7 @@
 namespace Sun;
 
 use Exception;
+use League\Csv\Reader;
 use Sun\Contract\Country as CountryContract;
 
 class Country implements CountryContract
@@ -13,6 +14,13 @@ class Country implements CountryContract
      * @var array
      */
     protected $countries;
+
+    /**
+     * Country geo ips data.
+     *
+     * @var array
+     */
+    protected $countryGeoIps;
 
     /**
      * Create a new country instance.
@@ -66,6 +74,44 @@ class Country implements CountryContract
         $country = $this->{$countryCode};
 
         return $country['code'];
+    }
+
+    /**
+     * Get country name by the given geo ip address.
+     *
+     * @param string $ip
+     *
+     * @return array
+     * @throws Exception
+     */
+    public function getCountryNameByGeoIp($ip)
+    {
+        if(! filter_var($ip, FILTER_VALIDATE_IP)) {
+            throw new Exception("The given geo ip address [ $ip ] is not a valid geo ip address.");
+        }
+
+        $this->setCountryGeoIps();
+
+        foreach($this->countryGeoIps as $countryGeoIp) {
+            if( ($countryGeoIp[2] <= ip2long($ip)) and ($countryGeoIp[3] >= ip2long($ip)) ) {
+                return [
+                    'code' => $countryGeoIp[4],
+                    'name' => $countryGeoIp[5]
+                ];
+            }
+        }
+
+        throw new Exception("The given geo ip address [ $ip ] does not exist.");
+    }
+
+    /**
+     * Set country geo ips data with countryGeoIps variable.
+     */
+    protected function setCountryGeoIps()
+    {
+        if (empty($this->countryGeoIps)) {
+            $this->countryGeoIps = Reader::createFromPath(__DIR__ . '/../data/GeoIPCountryWhois.csv')->fetchAll();
+        }
     }
 
     /**

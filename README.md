@@ -63,6 +63,13 @@ $country = new Sun\Country;
 $country->getDialingCode('BD');
 ```
 
+#### Get a country name using country geo ip address
+
+```php
+$country = new Sun\Country;
+$country->getCountryNameByGeoIp('203.202.251.42');
+```
+
 ## Integration In Laravel Framework
 
 Add the ServiceProvider to the providers array in config/app.php

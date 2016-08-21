@@ -2,6 +2,7 @@
 
 namespace spec\Sun;
 
+use Exception;
 use Prophecy\Argument;
 use PhpSpec\ObjectBehavior;
 
@@ -70,5 +71,27 @@ class CountrySpec extends ObjectBehavior
     function it_throws_an_exception_when_try_to_get_the_dialing_code_of_a_country_by_the_unknown_alpha_2_code()
     {
         $this->shouldThrow('\Exception')->during('getDialingCode', ['Unknown']);
+    }
+
+    function it_should_return_a_country_name_by_the_geo_ip_address()
+    {
+        $this->getCountryNameByGeoIp('203.202.251.42')->shouldReturn([
+            'code' => 'BD',
+            'name' => 'Bangladesh'
+        ]);
+    }
+
+    function it_throws_an_exception_if_the_given_geo_ip_address_is_not_a_valid_geo_ip_adress()
+    {
+        $this->shouldThrow(
+            new Exception("The given geo ip address [ 203 ] is not a valid geo ip address."))
+            ->during('getCountryNameByGeoIp', ['203']);
+    }
+
+    function it_throws_an_exception_if_the_given_geo_ip_address_does_not_exist()
+    {
+        $this->shouldThrow(
+            new Exception("The given geo ip address [ 0.0.0.0 ] does not exist."))
+            ->during('getCountryNameByGeoIp', ['0.0.0.0']);
     }
 }

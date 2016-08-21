@@ -13,6 +13,16 @@ interface Country
     public function get($countryCode = null);
 
     /**
+     * Get country name by the given geo ip address.
+     *
+     * @param string $ip
+     *
+     * @return array
+     * @throws Exception
+     */
+    public function getCountryNameByGeoIp($ip);
+
+    /**
      * Dynamically get country name & dialing code by Alpha-2 code.
      *
      * @param $countryCode
