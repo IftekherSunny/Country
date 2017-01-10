@@ -15,7 +15,7 @@ class CountrySpec extends ObjectBehavior
 
     function it_returns_an_array_of_all_countries_name_and_dialing_code()
     {
-        $this->get()->shouldHaveCount(245);
+        $this->get()->shouldHaveCount(246);
     }
 
     function it_returns_a_country_name_and_dialing_code_for_the_country_alpha_2_code()
