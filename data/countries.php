@@ -1000,5 +1000,9 @@ return [
     "ZW" => [
         "code"    => "+263",
         "name"    => "Zimbabwe"
+    ],
+    "ZZ" => [
+        "code"    => "+",
+        "name"    => "Unknown or unspecified country"
     ]
 ];
